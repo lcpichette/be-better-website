@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be Better</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        overflow: hidden;
+      }
+
+      .hero {
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .navbar {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        background-color: #000;
+        color: #fff;
+        padding: 10px 0;
+        font-size: 1.5rem;
+      }
+
+      .scrolling-bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        overflow: hidden;
+      }
+
+      .scrolling-bar span {
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 1.8rem;
+        padding-left: 50%;
+        /* Reduced padding-left to make text appear sooner */
+        animation: scroll 30s linear infinite;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar">Be better.</div>
+
+    <div class="hero">
+      <h1>boredom = productivity</h1>
+    </div>
+
+    <div class="scrolling-bar">
+      <span id="quote"></span>
+    </div>
+
+    <script>
+      const quotes = [
+        '"Every action you take is a vote for the type of person you wish to become." – James Clear',
+        '"The impediment to action advances action. What stands in the way becomes the way." – Marcus Aurelius',
+        '"You have power over your mind – not outside events. Realize this, and you will find strength." – Marcus Aurelius',
+        '"We suffer more in imagination than in reality." – Seneca',
+        '"It does not matter what you bear, but how you bear it." – Seneca',
+        '"Man conquers the world by conquering himself." – Zeno of Citium',
+        '"Waste no more time arguing about what a good man should be. Be one." – Marcus Aurelius',
+        '"He who fears death will never do anything worth of a man who is alive." – Seneca',
+        '"Dwell on the beauty of life. Watch the stars, and see yourself running with them." – Marcus Aurelius',
+        '"The best revenge is not to be like your enemy." – Marcus Aurelius',
+      ];
+
+      function getRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        return quotes[randomIndex];
+      }
+
+      document.getElementById("quote").textContent = getRandomQuote();
+    </script>
+  </body>
+</html>
